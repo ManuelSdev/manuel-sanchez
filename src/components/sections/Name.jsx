@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import SectionWrapper from './SectionWrapper'
 
-export default function Name(props) {
-   return <SectionWrapper {...props}> Name</SectionWrapper>
-}
+const Name = forwardRef(function Name(props, ref) {
+   // console.log('ref', ref)
+   return (
+      <SectionWrapper ref={ref} {...props}>
+         {' '}
+         Name
+      </SectionWrapper>
+   )
+})
+export default Name

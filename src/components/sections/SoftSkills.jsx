@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import SectionWrapper from './SectionWrapper'
 
-export default function SoftSkills(props) {
-   return <SectionWrapper {...props}> SoftSkills</SectionWrapper>
-}
+const SoftSkills = forwardRef(function SoftSkills(props, ref) {
+   return (
+      <SectionWrapper ref={ref} {...props}>
+         {' '}
+         SoftSkills
+      </SectionWrapper>
+   )
+})
+export default SoftSkills

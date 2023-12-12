@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react'
 import SectionWrapper from './SectionWrapper'
 
-const HardSkills = forwardRef(function HardSkills(props, ref) {
+const Photo = forwardRef(function Photo({ ref, ...props }) {
    return (
       <SectionWrapper ref={ref} {...props}>
          {' '}
-         HardSkills
+         Photo
       </SectionWrapper>
    )
 })
-export default HardSkills
+export default Photo

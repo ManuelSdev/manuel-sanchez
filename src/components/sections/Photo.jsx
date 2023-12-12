@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import SectionWrapper from './SectionWrapper'
 
-export default function Photo(props) {
-   return <SectionWrapper {...props}> Photo</SectionWrapper>
-}
+const Photo = forwardRef(function Photo(props, ref) {
+   return (
+      <SectionWrapper ref={ref} {...props}>
+         {' '}
+         Photo
+      </SectionWrapper>
+   )
+})
+
+export default Photo
