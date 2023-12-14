@@ -1,42 +1,29 @@
 'use client'
 import { cn } from '@/utils/cn'
 import clsx from 'clsx'
-import React, { forwardRef } from 'react'
-import { useInView } from 'react-intersection-observer'
+import React from 'react'
+export default function SectionWrapper({
+   className,
+   first,
+   ref,
+   children,
 
-const SectionWrapper = forwardRef(function SectionWrappers(props, ref) {
-   const { className, first, id, refo, ...otherProps } = props
-   // console.log('ref', ref)
-   /*
-   const {
-      ref: refo,
-      inView,
-      entry,
-   } = useInView({
-     
-      threshold: 1,
-      onChange: (inView, entry) => {
-         console.log('inView', ref.current)
-      },
-   })
-*/
-   const a = (element) => {
-      //https://stackoverflow.com/questions/60270678/using-multiple-refs-on-a-single-react-element
-      refo(element)
-      ref.current = element
-   }
+   ...props
+}) {
    return (
       <div
-         id={id}
          ref={ref}
          className={cn(
-            'h-slimBarScreen w-full snap-start  md:h-fatBarScreen',
+            'py-12 text-white  lg:max-w-4xl lg:px-[8%] lg:py-20',
+            'h-slimBarScreen w-full',
+            'lg:h-fatBarScreen',
+            'snap-center',
             className,
             first
          )}
-         {...otherProps}
-      />
+         {...props}
+      >
+         {children}
+      </div>
    )
-})
-
-export default SectionWrapper
+}

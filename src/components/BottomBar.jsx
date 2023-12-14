@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function AppBar() {
+export default function BottomBar() {
    return (
-      <header className="fixed top-0 z-50 w-full bg-red-400">
+      <footer className="fixed bottom-0 z-50 w-full  bg-red-400 lg:hidden">
          <nav className="flex h-slimTopAppBar items-center justify-between gap-8 lg:h-fatTopAppBar">
-            HEADER
+            BOTTOM
          </nav>
-      </header>
+      </footer>
    )
 }

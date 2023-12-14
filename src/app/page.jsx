@@ -1,13 +1,29 @@
 import AppBar from '@/components/AppBar'
-import PageContainer from '@/components/PageContainer'
-import SectionContainer from '@/components/SectionContainer'
-import Image from 'next/image'
+import BottomBar from '@/components/BottomBar'
+import MainPhoto from '@/components/MainPhoto'
+import SideBar from '@/components/SideBar'
+import SectionContainer from '@/components/sections/SectionContainer'
 
 export default function Home() {
    return (
-      <div className=" overflow-hidden">
+      <div className="h-screen snap-y snap-mandatory">
          <AppBar />
-         <SectionContainer />
+         <MainPhoto
+            className={
+               'hidden bg-bronze lg:fixed  lg:left-0 lg:top-fatTopAppBar lg:block lg:h-full lg:w-[calc(50%-var(--sideBar-width)/2)]'
+            }
+         />
+         <SectionContainer
+            className={
+               'lg:absolute  lg:right-sideBarWidth lg:w-[calc(50%-var(--sideBar-width)/2)]'
+            }
+         />
+
+         <SideBar />
+         <BottomBar />
       </div>
    )
 }
+/*
+
+         */

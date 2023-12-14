@@ -20,18 +20,18 @@ export default function SectionContainer() {
       /* Optional options */
       threshold: 0.1,
       onChange: (inView, entry) => {
-         console.log('inViewName', inView)
+         console.log('inViewName', entry)
          //  inView && nameRef.current.scrollIntoView({ behavior: 'smooth' })
-         //    inView && nameRef.current.scrollIntoView()
+         //inView && photoRef.current.scrollIntoView()
       },
    })
    const [inViewPhotoRef, inViewPhoto] = useInView({
       /* Optional options */
-      threshold: 0.1,
+      threshold: 0.00001,
       onChange: (inView, entry) => {
          console.log('inViewPhoto', inView)
          // inView && photoRef.current.scrollIntoView({ behavior: 'smooth' })
-         inView && photoRef.current.scrollIntoView()
+         //   inView && photoRef.current.scrollIntoView()
       },
    })
    const [inViewHardSkillsRef, inViewHardSkills] = useInView({
@@ -53,13 +53,73 @@ export default function SectionContainer() {
       },
    })
    //   const he
+   const initialState = {
+      name: '',
+      photo: '',
+      hardSkills: '',
+      softSkills: '',
+   }
+
+   const [mutationClass, setMutationClass] = useState(initialState)
+
    const handleScroll = (e) => {
+      const isEl = (element) => e.target.className.includes(element)
       //  e.preventDefault()
-      if (e.deltaY > 0) setFirst('translate-y-full')
+      if (e.deltaY > 0) {
+         if (isEl('NAME')) {
+            setMutationClass({
+               ...initialState,
+               name: 'delay-1000 -translate-y-full',
+               //   name: ' -top-800 ',
+               photo: '-translate-y-full',
+            })
+         }
+         if (isEl('PHOTO')) {
+            setMutationClass({
+               ...mutationClass,
+               photo: 'delay-1000 -translate-y-full',
+               hardSkills: '-translate-y-full ',
+            })
+         }
+         if (isEl('HARD')) {
+            setMutationClass({
+               ...mutationClass,
+               softSkills: '-translate-y-full ',
+            })
+         }
+         if (isEl('SOFT')) {
+         }
+      }
+      if (e.deltaY < 0) {
+         if (isEl('NAME')) {
+         }
+         if (isEl('PHOTO')) {
+            setMutationClass({
+               ...initialState,
+               photo: 'delay-1000 ',
+               name: 'z-10',
+               //   hardSkills: '-translate-y-full ',
+            })
+         }
+         if (isEl('HARD')) {
+            setMutationClass({
+               ...mutationClass,
+               hardSkills: 'translate-y-full ',
+            })
+         }
+         if (isEl('SOFT')) {
+            setMutationClass({
+               ...mutationClass,
+               softSkills: 'translate-y-full ',
+            })
+         }
+      }
+      setFirst('translate-y-full')
       if (e.deltaY < 0) setFirst('-translate-y-full')
       //console.log(e.target.scrollTop)
-      console.log(e.deltaY)
-      //   console.log(e)
+      // console.log(e.deltaY)
+      //  console.log(e.target.className.includes('NAME'))
+      console.log(isEl('NAME'))
       //  console.log(window.innerHeight)
    }
    //  console.log('inView', inView)
@@ -69,12 +129,12 @@ export default function SectionContainer() {
       <div
          //onScroll={(e) => console.log(e)}
          // onWheel={(e) => console.log(window.innerHeight)}
-         // onWheel={handleScroll}
+         onWheel={handleScroll}
          className={clsx(
-            'mt-slimTopAppBar h-slimBarScreen md:mt-fatTopAppBar  md:h-fatBarScreen',
+            'relative mt-slimTopAppBar h-slimBarScreen md:mt-fatTopAppBar  md:h-fatBarScreen'
             //   'snap-y snap-mandatory overflow-auto scroll-smooth md:h-fatBarScreen'
             //'overflow-y-scroll scroll-smooth'
-            ' overflow-y-auto'
+            //  ' overflow-y-auto'
             // 'scroll-smooth'
          )}
       >
@@ -86,24 +146,30 @@ export default function SectionContainer() {
          >
             hola
          </button>
-         <div ref={inViewNameRef}>
+         <div ref={inViewNameRef} cl>
             <Name
                id={'name'}
                ref={nameRef}
-               className={'bg-blue-400'}
-               // first={first}
+               className={'NAME left-0 top-0 z-0  bg-blue-400'}
+               mutationClass={mutationClass.name}
             />
          </div>
 
          <div ref={inViewPhotoRef}>
-            <Photo id={'photo'} ref={photoRef} className={' bg-green-200'} />
+            <Photo
+               id={'photo'}
+               ref={photoRef}
+               className={'PHOTO 0 left-0  top-full bg-green-200'}
+               mutationClass={mutationClass.photo}
+            />
          </div>
 
          <div ref={inViewHardSkillsRef}>
             <HardSkills
                id={'hardSkills'}
                ref={hardSkillsRef}
-               className={'bg-violet-200'}
+               className={'HARD left-0 top-full z-0 bg-violet-200'}
+               mutationClass={mutationClass.hardSkills}
             />
          </div>
 
@@ -111,7 +177,8 @@ export default function SectionContainer() {
             <SoftSkills
                id={'softSkills'}
                ref={softSkillsRef}
-               className={'bg-amber-200'}
+               className={'SOFT left-0 top-full z-0 bg-amber-200'}
+               mutationClass={mutationClass.softSkills}
             />
          </div>
       </div>
