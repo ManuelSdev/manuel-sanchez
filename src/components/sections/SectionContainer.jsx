@@ -8,15 +8,18 @@ import SoftSkillsSection from './skills/SoftSkillsSection'
 import NameSection from './name/NameSection'
 import ProyectsSection from './ProyectsSection'
 import NameSectionMobile from './name/NameSectionMobile'
+import Dots from '../Dots'
 
 export default function SectionContainer({ className }) {
    return (
       <div
+         id="SectionContainer"
          className={cn(
-            'mt-slimTopAppBar h-slimBarScreen ',
-            'lg:mt-fatTopAppBar lg:h-fatBarScreen',
+            'absolute w-full lg:right-sideBarWidth',
+            'top-slimTopAppBar lg:top-fatTopAppBar  ',
+            ' h-slimBarScreen lg:h-fatBarScreen',
             //'overflow-y-clip',
-            //' snap-y snap-mandatory overflow-y-auto ',
+            // ' snap-y snap-mandatory overflow-y-auto ',
             className
          )}
       >

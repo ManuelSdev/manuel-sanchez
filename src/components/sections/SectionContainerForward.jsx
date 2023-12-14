@@ -1,14 +1,17 @@
 'use client'
 import React, { useRef, useState } from 'react'
-import Photo from './sections/Photo'
-import Name from './sections/Name'
-import HardSkills from './sections/HardSkills'
-import SoftSkills from './sections/SoftSkills'
+
 import clsx from 'clsx'
 import { useInView } from 'react-intersection-observer'
+
+import NameSectionForward from './noUseForwardRef/NameSectionForward'
+import PhotoSectionForward from './noUseForwardRef/PhotoSectionForward'
+import HardSkillsSectionForward from './noUseForwardRef/HardSkillsSectionForward'
+import SoftSkillsSectionForward from './noUseForwardRef/SoftSkillsSectionForward'
+import PhotoSection from './PhotoSection'
 import { cn } from '@/utils/cn'
 
-export default function SectionContainer() {
+export default function SectionContainerForward({ className }) {
    const [first, setFirst] = useState('')
 
    const nameRef = useRef(null)
@@ -64,7 +67,8 @@ export default function SectionContainer() {
 
    const handleScroll = (e) => {
       const isEl = (element) => e.target.className.includes(element)
-      //  e.preventDefault()
+      console.log('e ', e)
+      //   e.preventDefault()
       if (e.deltaY > 0) {
          if (isEl('NAME')) {
             setMutationClass({
@@ -130,12 +134,13 @@ export default function SectionContainer() {
          //onScroll={(e) => console.log(e)}
          // onWheel={(e) => console.log(window.innerHeight)}
          onWheel={handleScroll}
-         className={clsx(
-            'relative mt-slimTopAppBar h-slimBarScreen md:mt-fatTopAppBar  md:h-fatBarScreen'
+         className={cn(
+            'relative mt-slimTopAppBar h-slimBarScreen md:mt-fatTopAppBar  md:h-fatBarScreen',
             //   'snap-y snap-mandatory overflow-auto scroll-smooth md:h-fatBarScreen'
             //'overflow-y-scroll scroll-smooth'
             //  ' overflow-y-auto'
             // 'scroll-smooth'
+            className
          )}
       >
          <button
@@ -146,8 +151,9 @@ export default function SectionContainer() {
          >
             hola
          </button>
-         <div ref={inViewNameRef} cl>
-            <Name
+         <PhotoSection className={'bg-green-200 lg:hidden'} />
+         <div ref={inViewNameRef}>
+            <NameSectionForward
                id={'name'}
                ref={nameRef}
                className={'NAME left-0 top-0 z-0  bg-blue-400'}
@@ -156,7 +162,7 @@ export default function SectionContainer() {
          </div>
 
          <div ref={inViewPhotoRef}>
-            <Photo
+            <PhotoSectionForward
                id={'photo'}
                ref={photoRef}
                className={'PHOTO 0 left-0  top-full bg-green-200'}
@@ -165,7 +171,7 @@ export default function SectionContainer() {
          </div>
 
          <div ref={inViewHardSkillsRef}>
-            <HardSkills
+            <HardSkillsSectionForward
                id={'hardSkills'}
                ref={hardSkillsRef}
                className={'HARD left-0 top-full z-0 bg-violet-200'}
@@ -174,7 +180,7 @@ export default function SectionContainer() {
          </div>
 
          <div ref={inViewSoftSkillsRef}>
-            <SoftSkills
+            <SoftSkillsSectionForward
                id={'softSkills'}
                ref={softSkillsRef}
                className={'SOFT left-0 top-full z-0 bg-amber-200'}

@@ -14,7 +14,7 @@ export default function SectionWrapper({
       <div
          ref={ref}
          className={cn(
-            'py-12 text-white  lg:max-w-4xl lg:px-[8%] lg:py-20',
+            'py-12 text-white lg:px-[8%] lg:py-20',
             'h-slimBarScreen w-full',
             'lg:h-fatBarScreen',
             'snap-center',

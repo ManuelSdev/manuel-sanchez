@@ -1,8 +1,6 @@
 import React, { forwardRef } from 'react'
 import SectionWrapper from '../SectionWrapper'
 import Image from 'next/image'
-import { SectionHeader, SectionContent, SectionBlock } from '@/modules/section'
-
 import {
    CssIcon,
    HtmlIcon,
@@ -16,6 +14,7 @@ import {
    NextJsIcon,
    GitIcon,
 } from './icons/hardSkills'
+import SectionContent from '../SectionContent'
 import SkillGrid from './SkillGrid'
 
 export default function HardSkillsSection(props) {
@@ -35,12 +34,11 @@ export default function HardSkillsSection(props) {
 
    //const a = skills.map((skill, index) => renderIcon(skill.icon))
    return (
-      <SectionBlock {...props}>
-         <SectionContent>
-            <SectionHeader>Hard Skills</SectionHeader>
+      <SectionWrapper {...props}>
+         <SectionContent title={'Hard Skills'}>
             <SkillGrid skillList={skillList} />
          </SectionContent>
-      </SectionBlock>
+      </SectionWrapper>
    )
 }
 //    {skills.map((skill, index) => renderIcon(skill.icon))}
