@@ -10,7 +10,7 @@ export default function SideBar({ className }) {
    return (
       <div
          className={cn(
-            'right-0 top-0 mt-fatTopAppBar hidden h-fatBarScreen w-[--sideBar-width] bg-black lg:fixed lg:block ',
+            'fixed right-0 top-0 mt-fatTopAppBar hidden h-fatBarScreen w-[--sideBar-width] bg-black lg:fixed lg:block ',
             className
          )}
       >

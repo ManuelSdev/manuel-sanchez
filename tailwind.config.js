@@ -31,7 +31,8 @@ export const theme = {
          //   fatTopAppBar: 'var(--topAppBar-height)',
          // slimTopAppBar: 'calc(var(--topAppBar-height) - 2rem)',
          fatBarScreen: 'calc(100vh - var(--topAppBar-height))',
-         slimBarScreen: 'calc(100vh - calc(var(--topAppBar-height) - 2rem)*2)',
+         // slimBarScreen: 'calc(100vh - calc(var(--topAppBar-height) - 2rem)*2)',
+         slimBarScreen: 'calc(100vh - calc(var(--topAppBar-height) - 2rem))',
       },
       padding: {
          fatTopAppBar: 'var(--topAppBar-height)',

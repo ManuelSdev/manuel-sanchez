@@ -128,12 +128,12 @@ export default function SectionContainerForward({ className }) {
    }
    //  console.log('inView', inView)
 
-   //  console.log(inViewNameRef)
+   //console.log(nameRef.current)
    return (
       <div
          //onScroll={(e) => console.log(e)}
          // onWheel={(e) => console.log(window.innerHeight)}
-         //  onWheel={handleScroll}
+         onWheel={handleScroll}
          className={cn(
             'relative mt-slimTopAppBar h-slimBarScreen md:mt-fatTopAppBar  md:h-fatBarScreen',
             //   'snap-y snap-mandatory overflow-auto scroll-smooth md:h-fatBarScreen'
@@ -152,43 +152,38 @@ export default function SectionContainerForward({ className }) {
             hola
          </button>
          <PhotoSection className={'bg-green-200 lg:hidden'} />
-
          <div ref={inViewNameRef}>
-            <div className="absolute left-0 top-0 z-30 h-8 w-full bg-violet-600" />
             <NameSectionForward
                id={'name'}
                ref={nameRef}
-               // className={'NAME left-0 top-0 z-0  bg-blue-400'}
+               className={'NAME left-0 top-0 z-0  bg-blue-400'}
                mutationClass={mutationClass.name}
             />
          </div>
 
          <div ref={inViewPhotoRef}>
-            <div className="absolute left-0 top-0 z-30 h-8 w-full bg-violet-600" />
             <PhotoSectionForward
                id={'photo'}
                ref={photoRef}
-               //className={'PHOTO 0 left-0  top-full bg-green-200'}
+               className={'PHOTO 0 left-0  top-full bg-green-200'}
                mutationClass={mutationClass.photo}
             />
          </div>
 
          <div ref={inViewHardSkillsRef}>
-            <div className="absolute left-0 top-0 z-30 h-8 w-full bg-violet-600" />
             <HardSkillsSectionForward
                id={'hardSkills'}
                ref={hardSkillsRef}
-               // className={'HARD left-0 top-full z-0 bg-violet-200'}
+               className={'HARD left-0 top-full z-0 bg-violet-200'}
                mutationClass={mutationClass.hardSkills}
             />
          </div>
 
          <div ref={inViewSoftSkillsRef}>
-            <div className="absolute left-0 top-0 z-30 h-8 w-full bg-violet-600" />
             <SoftSkillsSectionForward
                id={'softSkills'}
                ref={softSkillsRef}
-               //     className={'SOFT left-0 top-full z-0 bg-amber-200'}
+               className={'SOFT left-0 top-full z-0 bg-amber-200'}
                mutationClass={mutationClass.softSkills}
             />
          </div>

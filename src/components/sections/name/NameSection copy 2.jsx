@@ -6,13 +6,12 @@ export default function NameSection(props) {
 
    return (
       <SectionBlock {...props}>
-         <div className="">
+         <div className="pt-12 ">
             <div
                className={clsx(
                   // 'hidden lg:block',
                   // 'inline-block',
-                  '-ml-20 pl-11',
-                  //   'mt-24 py-11 ',
+                  '-ml-20 mt-24 py-11 pl-11',
                   'rounded-l-full bg-black font-serif text-3xl font-semibold  text-bronze',
                   'min-[500px]:-ml-24 min-[500px]:text-4xl',
                   'min-[700px]:text-5xl',
@@ -25,10 +24,8 @@ export default function NameSection(props) {
                <div>Manuel</div>
                <div>Sánchez Manzanares</div>
             </div>
+            <SectionContent>Hola</SectionContent>
          </div>
-
-         <div>hola</div>
       </SectionBlock>
    )
 }
-// <SectionContent className={'lg:py-12'}>Hola</SectionContent>
