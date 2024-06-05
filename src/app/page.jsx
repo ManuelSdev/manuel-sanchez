@@ -17,6 +17,7 @@ export default function Home() {
             'snap-y snap-mandatory overflow-y-auto'
          )}
       >
+         <AppBar />
          <MainPhoto
             className={clsx(
                'lg:w-[calc(50%-var(--sideBar-width)/2)]',

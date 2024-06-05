@@ -1,11 +1,12 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function AppBar() {
    const sections = [
-      { name: 'Inicio', ref: 'about' },
-      { name: 'Hard skills', ref: 'skills' },
-      { name: 'Soft skills', ref: 'proyects' },
-      { name: 'Proyectos', ref: 'contact' },
+      { name: 'Inicio', ref: 'home' },
+      { name: 'Hard skills', ref: 'hard' },
+      { name: 'Soft skills', ref: 'soft' },
+      { name: 'Proyectos', ref: 'proyects' },
    ]
    return (
       <header className="fixed top-0 z-50 w-full bg-red-400">
@@ -14,13 +15,14 @@ export default function AppBar() {
             <div className="hidden  gap-11 lg:flex">
                <div className="flex gap-8">
                   {sections.map((section) => (
-                     <button
+                     <Link
+                        href={`#${section.ref}`}
                         className="hover:text-white"
-                        type="button"
+                        //  type="button"
                         key={section.name}
                      >
                         {section.name}
-                     </button>
+                     </Link>
                   ))}
                </div>
                <button className="hover:text-white">Descargar CV</button>

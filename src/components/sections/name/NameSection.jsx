@@ -6,7 +6,7 @@ export default function NameSection(props) {
 
    return (
       <SectionBlock {...props}>
-         <div className="">
+         <div className="py-24">
             <div
                className={clsx(
                   // 'hidden lg:block',

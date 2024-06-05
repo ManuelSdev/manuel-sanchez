@@ -8,8 +8,8 @@ export const SectionBlock = ({ className, ...props }) => {
       <div
          className={cn(
             'pt-slimTopAppBar ',
-            //   'h-slimBarScreen w-full',
-            // 'lg:h-fatBarScreen',
+            'h-slimBarScreen',
+            'lg:h-fatBarScreen',
             //'min-h-screen ',
             'snap-center',
             className

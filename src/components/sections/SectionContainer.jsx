@@ -27,12 +27,17 @@ export default function SectionContainer({ className }) {
             className
          )}
       >
-         <NameSection className={'hidden min-h-screen bg-blue-700 lg:block'} />
+         <NameSection
+            id="home"
+            className={
+               'hidden  h-slimBarScreen bg-blue-700 lg:block lg:h-fatBarScreen'
+            }
+         />
          <NameSectionMobile className={'block bg-blue-400 lg:hidden'} />
-         <PhotoSection className={'bg-green-200 lg:hidden'} />
-         <HardSkillsSection className={'bg-violet-200'} />
-         <SoftSkillsSection className={'bg-amber-200'} />
-         <ProyectsSection className={'bg-red-200'} />
+         <PhotoSection id="photo" className={'bg-green-200 lg:hidden'} />
+         <HardSkillsSection id="hard" className={'bg-violet-200'} />
+         <SoftSkillsSection id="soft" className={'bg-amber-200'} />
+         <ProyectsSection id="proyects" className={'bg-red-200'} />
       </div>
    )
 }
