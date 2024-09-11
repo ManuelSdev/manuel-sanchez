@@ -14,16 +14,16 @@ import Welcome from './Welcome'
 
 const cardsInfo = [
    {
-      title: 'Conil Bikes',
+      title: 'Conil Bikes Web & CRM',
       description:
-         'Some quick example text to build on the card title and make up the bulk of the card content.',
+         'Web y CRM para una empresa de alquiler de bicicletas en Conil de la Frontera, Cádiz.',
       src: '/images/conil-s.png',
       href: 'https://web-conil-bikes.vercel.app/',
    },
    {
-      title: 'Sevimatic',
+      title: 'Sevimatic Web',
       description:
-         'Some quick example text to build on the card title and make up the bulk of the card content.',
+         'Web para una empresa de informática y publicidad en Espartinas, Sevilla.',
       src: '/images/sevi-s.png',
       href: 'https://websevi.vercel.app/',
    },
@@ -102,11 +102,11 @@ export default function Home() {
       <div className=" bg-[#E2E0E7] ">
          {/* MAIN-HERO */}
          <div className=" ml-auto mr-auto flex h-screen w-full items-center bg-[#0A001B] ">
-            <div className="flex w-full flex-col-reverse items-center justify-between gap-20 xl:max-w-[80%] xl:flex-row">
+            <div className="flex w-full flex-col-reverse items-center justify-between xl:max-w-[80%] xl:flex-row xl:gap-20">
                <div className="bg-red- flex w-full flex-col justify-center  px-9 text-white md:px-0 ">
                   <Welcome />
 
-                  <p className=" max-w-2xl self-center pt-5 text-justify xl:pt-7">
+                  <p className=" max-w-2xl self-center  text-justify xl:pt-7">
                      Me llamo Manuel Sánchez. Soy un desarrollador web full
                      stack y, en este espacio, muestro algunos de los proyectos
                      en los que he trabajado. En cada trabajo, me enfoco en
