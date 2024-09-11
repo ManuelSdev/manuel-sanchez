@@ -44,6 +44,8 @@ export const theme = {
       },
       backgroundImage: {
          'me': "url('/images/me.jpg')",
+         'pc': "url('/images/pc.jpeg')",
+         'conil': "url('/images/conil-s.png')",
       },
       fontFamily: {
          sans: ['Poppins', ..._fontFamily.sans],

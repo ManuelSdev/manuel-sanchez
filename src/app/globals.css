@@ -34,3 +34,22 @@ body {
       )
       rgb(var(--background-start-rgb));
 }
+
+.hola {
+   transition: fill 5s ease-in-out;
+   stroke-dasharray: 9541.93, 9541.93;
+   stroke-dashoffset: 7156;
+   stroke: rgb(255, 255, 255);
+   fill: rgb(255, 255, 255);
+}
+
+.par {
+   background-color: antiquewhite;
+}
+
+#welcome {
+   display: inline-block;
+   box-sizing: border-box;
+   max-height: calc(180px - 2rem);
+   width: auto;
+}
