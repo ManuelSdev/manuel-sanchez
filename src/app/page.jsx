@@ -101,7 +101,7 @@ export default function Home() {
    return (
       <div className=" bg-[#E2E0E7] ">
          {/* MAIN-HERO */}
-         <div className=" ml-auto mr-auto flex h-screen w-full items-center bg-[#0A001B] ">
+         <div className=" ml-auto mr-auto flex min-h-screen w-full items-center bg-[#0A001B] pb-8 ">
             <div className="flex w-full flex-col-reverse items-center justify-between xl:max-w-[80%] xl:flex-row xl:gap-20">
                <div className="bg-red- flex w-full flex-col justify-center  px-9 text-white md:px-0 ">
                   <Welcome />
