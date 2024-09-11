@@ -10,6 +10,7 @@ export default function Dots() {
                <div>
                   {sections.map((section, index) => (
                      <div
+                        key={index}
                         className={cn('my-6 h-4 w-4 rounded-full bg-bronze')}
                      />
                   ))}

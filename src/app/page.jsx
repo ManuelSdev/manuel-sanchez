@@ -99,7 +99,7 @@ const navigation = [
 export default function Home() {
    console.log('first')
    return (
-      <div className=" bg-slate-500">
+      <div className=" bg-[#E2E0E7] ">
          {/* MAIN-HERO */}
          <div className=" ml-auto mr-auto flex h-screen w-full items-center bg-[#0A001B] ">
             <div className="flex w-full flex-col-reverse items-center justify-between gap-20 xl:max-w-[80%] xl:flex-row">
@@ -149,7 +149,7 @@ export default function Home() {
                      <a
                         key={item.name}
                         href={item.href}
-                        className="text-gray-400 hover:text-gray-500"
+                        className="text-gray-200 hover:text-gray-500"
                      >
                         <span className="sr-only">{item.name}</span>
                         <item.icon aria-hidden="true" className="h-6 w-6" />
@@ -157,7 +157,7 @@ export default function Home() {
                   ))}
                </div>
                <div className="mt-8 md:order-1 md:mt-0">
-                  <p className="text-center text-xs leading-5 text-gray-500">
+                  <p className="text-center text-sm leading-5 text-gray-200">
                      &copy; 2024 Manuel Sánchez.
                   </p>
                </div>
